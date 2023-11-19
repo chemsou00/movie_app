@@ -20,8 +20,8 @@ class MoviesRepositoryImpl extends MoviesRespository {
       return Right(result);
     } on ServerException catch (failure) {
       return Left(ServerFailure(failure.errorMessageModel.statusMessage));
-    } on DioError catch (failure) {
-      return Left(ServerFailure(failure.message));
+    } on DioException catch (failure) {
+      return Left(ServerFailure(failure.message!));
     }
   }
 
@@ -32,8 +32,8 @@ class MoviesRepositoryImpl extends MoviesRespository {
       return Right(result);
     } on ServerException catch (failure) {
       return Left(ServerFailure(failure.errorMessageModel.statusMessage));
-    } on DioError catch (failure) {
-      return Left(ServerFailure(failure.message));
+    } on DioException catch (failure) {
+      return Left(ServerFailure(failure.message!));
     }
   }
 
@@ -45,8 +45,8 @@ class MoviesRepositoryImpl extends MoviesRespository {
       return Right(result);
     } on ServerException catch (failure) {
       return Left(ServerFailure(failure.errorMessageModel.statusMessage));
-    } on DioError catch (failure) {
-      return Left(ServerFailure(failure.message));
+    } on DioException catch (failure) {
+      return Left(ServerFailure(failure.message!));
     }
   }
 
@@ -58,8 +58,8 @@ class MoviesRepositoryImpl extends MoviesRespository {
       return Right(result);
     } on ServerException catch (failure) {
       return Left(ServerFailure(failure.errorMessageModel.statusMessage));
-    } on DioError catch (failure) {
-      return Left(ServerFailure(failure.message));
+    } on DioException catch (failure) {
+      return Left(ServerFailure(failure.message!));
     }
   }
 }

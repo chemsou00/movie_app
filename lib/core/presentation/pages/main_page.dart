@@ -24,7 +24,7 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       body: WillPopScope(
         onWillPop: () async {
-          final String location = GoRouterState.of(context).location;
+          final String location = GoRouterState.of(context).matchedLocation;
           if (!location.startsWith(moviesPath)) {
             _onItemTapped(0, context);
           }
@@ -70,7 +70,7 @@ class _MainPageState extends State<MainPage> {
   }
 
   int _getSelectedIndex(BuildContext context) {
-    final String location = GoRouterState.of(context).location;
+    final String location = GoRouterState.of(context).matchedLocation;
     if (location.startsWith(moviesPath)) {
       return 0;
     }
