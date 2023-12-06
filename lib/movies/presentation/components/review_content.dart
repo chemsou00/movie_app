@@ -14,13 +14,13 @@ class ReviewContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    return SingleChildScrollView(
-      physics: const BouncingScrollPhysics(),
-      child: Padding(
-        padding: const EdgeInsets.all(AppPadding.p16),
-        child: Column(
-          children: [
-            Row(
+    return Padding(
+      padding: const EdgeInsets.all(AppPadding.p16),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
               children: [
                 Padding(
                   padding: const EdgeInsets.only(right: AppPadding.p6),
@@ -41,15 +41,18 @@ class ReviewContent extends StatelessWidget {
                 )
               ],
             ),
-            Padding(
+          ),
+          const Divider(),
+          Flexible(
+            child: SingleChildScrollView(
               padding: const EdgeInsets.only(top: AppPadding.p10),
               child: Text(
                 review.content,
                 style: textTheme.bodyLarge,
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

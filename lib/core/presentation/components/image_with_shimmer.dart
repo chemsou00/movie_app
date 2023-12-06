@@ -23,8 +23,10 @@ class ImageWithShimmer extends StatelessWidget {
       width: width,
       fit: BoxFit.cover,
       placeholder: (_, __) => Shimmer.fromColors(
-        baseColor: Colors.grey[850]!,
-        highlightColor: Colors.grey[800]!,
+        // baseColor: Colors.grey[850]!,
+        baseColor: Theme.of(context).colorScheme.secondaryContainer,
+        // highlightColor: Colors.grey[800]!,
+        highlightColor: Theme.of(context).colorScheme.onSecondary,
         child: Container(
           height: height,
           color: AppColors.secondaryText,

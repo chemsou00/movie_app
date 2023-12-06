@@ -18,16 +18,17 @@ class ReviewCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    return InkWell(
+    return GestureDetector(
       onTap: () {
-        showCustomBottomSheet(context, ReviewContent(review: review));
+        showCustomBottomSheet(
+            context, ReviewContent(review: review));
       },
       child: Container(
         padding: const EdgeInsets.all(AppPadding.p12),
         width: AppSize.s240,
         height: double.infinity,
         decoration: BoxDecoration(
-          color: AppColors.secondaryBackground,
+          color: Theme.of(context).colorScheme.onPrimary,
           borderRadius: BorderRadius.circular(AppSize.s12),
         ),
         child: Column(

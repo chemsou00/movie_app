@@ -8,9 +8,9 @@ import 'package:movies_app/core/resources/app_values.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({
-    Key? key,
+    super.key,
     required this.child,
-  }) : super(key: key);
+  });
 
   final Widget child;
 
@@ -22,13 +22,13 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: WillPopScope(
-        onWillPop: () async {
+      body: PopScope(
+        canPop: true,
+        onPopInvoked: (_) async {
           final String location = GoRouterState.of(context).matchedLocation;
           if (!location.startsWith(moviesPath)) {
             _onItemTapped(0, context);
           }
-          return true;
         },
         child: widget.child,
       ),
@@ -59,6 +59,13 @@ class _MainPageState extends State<MainPage> {
             label: AppStrings.watchlist,
             icon: Icon(
               Icons.bookmark_rounded,
+              size: AppSize.s20,
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: AppStrings.settings,
+            icon: Icon(
+              Icons.settings,
               size: AppSize.s20,
             ),
           ),

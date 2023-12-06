@@ -40,7 +40,6 @@ class _VerticalListViewState extends State<VerticalListView> {
     return ListView.separated(
       padding: const EdgeInsets.all(AppPadding.p8),
       controller: _scrollController,
-      physics: const BouncingScrollPhysics(),
       itemCount: widget.itemCount,
       itemBuilder: widget.itemBuilder,
       separatorBuilder: (context, index) {

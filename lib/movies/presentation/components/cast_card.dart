@@ -26,11 +26,13 @@ class CastCard extends StatelessWidget {
               height: AppSize.s130,
             ),
           ),
-          Text(
-            cast.name,
-            style: textTheme.bodyLarge,
-            maxLines: 2,
-            textAlign: TextAlign.center,
+          Flexible(
+            child: Text(
+              cast.name,
+              style: textTheme.bodyMedium,
+              maxLines: 2,
+              textAlign: TextAlign.center,
+            ),
           )
         ],
       ),
