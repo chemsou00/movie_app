@@ -1,7 +1,18 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:movies_app/tv_shows/domain/usecases/get_season_details_usecase.dart';
 
 class ApiConstants {
-  static const String apiKey = '';// put here your Api Key
+
+  static String? apiKey = dotenv.env['TMDB_KEY'];// put here your Api Key
+  /*
+  Api kEY LINK :https://developer.themoviedb.org/v3/reference/intro/authentication#api-key-quick-start
+  * You can change dotenv.env['TMDB_KEY'] with api Key as String
+  * Example apiKey = "ds7e52sd4sdf21df96";
+  * TODO : MAKE SURE IN MAIN FUNCTION COMMENT (dotenv.load(fileName: 'api_config.env'))
+  * Or add File in project Path with name api_config.env
+  * and type TMDB_KEY = ds7e52sd4sdf21df96 <= This is an Example
+  *
+  */
   static const String baseUrl = 'https://api.themoviedb.org/3';
 
   static const String baseBackdropUrl = 'https://image.tmdb.org/t/p/w1280';
@@ -24,13 +35,13 @@ class ApiConstants {
       'https://popcornsg.s3.amazonaws.com/gallery/1577405144-six-year.png';
 
   // movies paths
-  static const String nowPlayingMoviesPath =
+  static String nowPlayingMoviesPath =
       '$baseUrl/movie/now_playing?api_key=$apiKey';
 
-  static const String popularMoviesPath =
+  static String popularMoviesPath =
       '$baseUrl/movie/popular?api_key=$apiKey';
 
-  static const String topRatedMoviesPath =
+  static String topRatedMoviesPath =
       '$baseUrl/movie/top_rated?api_key=$apiKey';
 
   static String getMovieDetailsPath(int movieId) {
@@ -46,13 +57,13 @@ class ApiConstants {
   }
 
   // tv shows paths
-  static const String onAirTvShowsPath =
+  static String onAirTvShowsPath =
       '$baseUrl/tv/on_the_air?api_key=$apiKey&with_original_language=en';
 
-  static const String popularTvShowsPath =
+  static String popularTvShowsPath =
       '$baseUrl/tv/popular?api_key=$apiKey&with_original_language=en';
 
-  static const String topRatedTvShowsPath =
+  static String topRatedTvShowsPath =
       '$baseUrl/tv/top_rated?api_key=$apiKey&with_original_language=en';
 
   static String getTvShowDetailsPath(int tvShowId) {
