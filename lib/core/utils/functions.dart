@@ -6,7 +6,6 @@ import 'package:movies_app/core/presentation/components/section_listview_card.da
 import 'package:movies_app/core/presentation/components/overview_section.dart';
 import 'package:movies_app/core/presentation/components/section_listview.dart';
 import 'package:movies_app/core/presentation/components/section_title.dart';
-import 'package:movies_app/core/resources/app_colors.dart';
 import 'package:movies_app/core/resources/app_routes.dart';
 import 'package:movies_app/core/resources/app_strings.dart';
 import 'package:movies_app/core/resources/app_values.dart';
