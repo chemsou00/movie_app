@@ -5,12 +5,12 @@ import 'package:movies_app/core/domain/usecase/base_use_case.dart';
 import 'package:movies_app/movies/domain/repository/movies_repository.dart';
 
 class GetMoviesDetailsUseCase extends BaseUseCase<MediaDetails, int> {
-  final MoviesRespository _baseMoviesRespository;
+  final MoviesRepository _baseMoviesRepository;
 
-  GetMoviesDetailsUseCase(this._baseMoviesRespository);
+  GetMoviesDetailsUseCase(this._baseMoviesRepository);
 
   @override
   Future<Either<Failure, MediaDetails>> call(int p) async {
-    return await _baseMoviesRespository.getMovieDetails(p);
+    return await _baseMoviesRepository.getMovieDetails(p);
   }
 }

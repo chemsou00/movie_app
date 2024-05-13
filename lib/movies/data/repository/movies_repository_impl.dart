@@ -8,7 +8,7 @@ import 'package:movies_app/movies/domain/repository/movies_repository.dart';
 
 import 'package:movies_app/movies/data/datasource/movies_remote_data_source.dart';
 
-class MoviesRepositoryImpl extends MoviesRespository {
+class MoviesRepositoryImpl extends MoviesRepository {
   final MoviesRemoteDataSource _baseMoviesRemoteDataSource;
 
   MoviesRepositoryImpl(this._baseMoviesRemoteDataSource);

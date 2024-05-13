@@ -52,7 +52,7 @@ class ServiceLocator {
         () => WatchlistLocalDataSourceImpl());
 
     // Repository
-    sl.registerLazySingleton<MoviesRespository>(
+    sl.registerLazySingleton<MoviesRepository>(
         () => MoviesRepositoryImpl(sl()));
     sl.registerLazySingleton<TVShowsRepository>(
         () => TVShowsRepositoryImpl(sl()));
